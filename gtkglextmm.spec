@@ -1,12 +1,12 @@
 Summary:	C++ wrapper for GtkGLExt library
 Summary(pl):	Interfejs C++ do biblioteki GtkGLExt
 Name:		gtkglextmm
-Version:	1.0.0
+Version:	1.0.1
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/gtkglext/%{name}-%{version}.tar.bz2
-# Source0-md5:	7e9512452bdd0a073898eed3db17a476
+# Source0-md5:	129239375d6f7162b8426c0192fc3475
 URL:		http://gtkglext.sourceforge.net/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
