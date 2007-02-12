@@ -1,5 +1,5 @@
 Summary:	C++ wrapper for GtkGLExt library
-Summary(pl):	Interfejs C++ do biblioteki GtkGLExt
+Summary(pl.UTF-8):   Interfejs C++ do biblioteki GtkGLExt
 Name:		gtkglextmm
 Version:	1.2.0
 Release:	1
@@ -22,12 +22,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 gtkglextmm is C++ wrapper for GtkGLExt, OpenGL Extension to GTK.
 
-%description -l pl
+%description -l pl.UTF-8
 gtkglextmm to interfejs C++ do GtkGLExt - rozszerzenia OpenGL dla GTK.
 
 %package devel
 Summary:	Header files for gtkglextmm library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki gtkglextmm
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki gtkglextmm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtkglext-devel >= 1.0.0
@@ -36,19 +36,19 @@ Requires:	gtkmm-devel >= 2.4.0
 %description devel
 Header files for gtkglextmm library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe biblioteki gtkglextmm.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki gtkglextmm.
 
 %package static
 Summary:	Static gtkglextmm library
-Summary(pl):	Statyczna biblioteka gtkglextmm
+Summary(pl.UTF-8):   Statyczna biblioteka gtkglextmm
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static gtkglextmm library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka gtkglextmm.
 
 %prep
