@@ -1,5 +1,5 @@
 Summary:	C++ wrapper for GtkGLExt library
-Summary(pl.UTF-8):   Interfejs C++ do biblioteki GtkGLExt
+Summary(pl.UTF-8):	Interfejs C++ do biblioteki GtkGLExt
 Name:		gtkglextmm
 Version:	1.2.0
 Release:	1
@@ -27,7 +27,7 @@ gtkglextmm to interfejs C++ do GtkGLExt - rozszerzenia OpenGL dla GTK.
 
 %package devel
 Summary:	Header files for gtkglextmm library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki gtkglextmm
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki gtkglextmm
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtkglext-devel >= 1.0.0
@@ -41,7 +41,7 @@ Pliki nagłówkowe biblioteki gtkglextmm.
 
 %package static
 Summary:	Static gtkglextmm library
-Summary(pl.UTF-8):   Statyczna biblioteka gtkglextmm
+Summary(pl.UTF-8):	Statyczna biblioteka gtkglextmm
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
