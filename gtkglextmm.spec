@@ -81,6 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libg[dt]kglextmm-x11-1.2.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libg[dt]kglextmm-x11-1.2.so.0
 
 %files devel
 %defattr(644,root,root,755)
