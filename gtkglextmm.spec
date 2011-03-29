@@ -2,11 +2,12 @@ Summary:	C++ wrapper for GtkGLExt library
 Summary(pl.UTF-8):	Interfejs C++ do biblioteki GtkGLExt
 Name:		gtkglextmm
 Version:	1.2.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/gtkglext/%{name}-%{version}.tar.bz2
 # Source0-md5:	27c05f4d45c5fd07b6fb0f044add3056
+Patch0:		gdkspanfunc.patch
 URL:		http://gtkglext.sourceforge.net/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake >= 1:1.7
@@ -53,6 +54,7 @@ Statyczna biblioteka gtkglextmm.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -71,6 +73,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -86,7 +90,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libg[dt]kglextmm-x11-1.2.so
-%{_libdir}/libg[dt]kglextmm-x11-1.2.la
 %{_libdir}/gtkglextmm-1.2
 %{_includedir}/gtkglextmm-1.2
 %{_aclocaldir}/gtkglextmm-1.2.m4

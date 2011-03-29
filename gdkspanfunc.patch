@@ -1,0 +1,13 @@
+--- gtkglextmm-1.2.0/gtkglext/gtkmm/gl/widget.cc.wiget	2011-03-29 17:25:46.862513111 +0200
++++ gtkglextmm-1.2.0/gtkglext/gtkmm/gl/widget.cc	2011-03-29 17:28:07.132244271 +0200
+@@ -17,9 +17,8 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA.
+  */
+ 
+-#include <gtk/gtkglwidget.h>
+-
+ #include "widget.h"
++#include <gtk/gtkglwidget.h>
+ 
+ namespace Gtk
+ {
