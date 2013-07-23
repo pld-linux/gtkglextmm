@@ -1,0 +1,88 @@
+--- gtkglextmm-1.2.0/configure.in.orig	2006-02-28 02:40:33.000000000 +0100
++++ gtkglextmm-1.2.0/configure.in	2013-07-23 17:40:34.026825455 +0200
+@@ -290,9 +290,8 @@
+ LIBS="$save_LIBS"
+ 
+ # gmmproc
+-GLIBMM_CHECK_PERL([5.6.0])
+-GLIBMM_PREFIX=`$PKG_CONFIG --variable=prefix glibmm_pkg`
+-GMMPROC_DIR=$GLIBMM_PREFIX/lib/glibmm_pkg/proc
++MM_CHECK_PERL([5.6.0])
++GMMPROC_DIR="`$PKG_CONFIG --variable=gmmprocdir glibmm_pkg`"
+ AC_SUBST(GMMPROC_DIR)
+ GMMPROC=$GMMPROC_DIR/gmmproc
+ AC_SUBST(GMMPROC)
+--- gtkglextmm-1.2.0/gdkglext/gdkmm/gl/wrap_init.cc.orig	2006-02-28 02:46:15.000000000 +0100
++++ gtkglextmm-1.2.0/gdkglext/gdkmm/gl/wrap_init.cc	2013-07-23 20:34:58.809719624 +0200
+@@ -1,5 +1,9 @@
+ 
++#undef G_DISABLE_DEPRECATED
++#define GLIB_DISABLE_DEPRECATION_WARNINGS 1
+ #include <glib.h>
++#undef GLIB_DISABLE_DEPRECATION_WARNINGS
++#define G_DISABLE_DEPRECATED
+ 
+ // Disable the 'const' function attribute of the get_type() functions.
+ // GCC would optimize them out because we don't use the return value.
+--- gtkglextmm-1.2.0/gdkglext/gdkmm/gl/query.cc.orig	2003-02-27 10:49:24.000000000 +0100
++++ gtkglextmm-1.2.0/gdkglext/gdkmm/gl/query.cc	2013-07-23 20:41:29.083036578 +0200
+@@ -17,10 +17,10 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA.
+  */
+ 
+-#include <gdk/gdkglquery.h>
+-
+ #include "query.h"
+ 
++#include <gdk/gdkglquery.h>
++
+ namespace Gdk
+ {
+   namespace GL
+--- gtkglextmm-1.2.0/gdkglext/gdkmm/gl/pixmapext.cc.orig	2004-05-18 08:01:49.000000000 +0200
++++ gtkglextmm-1.2.0/gdkglext/gdkmm/gl/pixmapext.cc	2013-07-23 20:42:02.043035194 +0200
+@@ -17,11 +17,11 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA.
+  */
+ 
++#include "pixmapext.h"
++
+ #include <gdk/gdkgldrawable.h>
+ #include <gdk/gdkglpixmap.h>
+ 
+-#include "pixmapext.h"
+-
+ namespace Gdk
+ {
+   namespace GL
+--- gtkglextmm-1.2.0/gdkglext/gdkmm/gl/windowext.cc.orig	2004-05-18 08:01:49.000000000 +0200
++++ gtkglextmm-1.2.0/gdkglext/gdkmm/gl/windowext.cc	2013-07-23 20:50:45.153013240 +0200
+@@ -17,11 +17,11 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA.
+  */
+ 
++#include "windowext.h"
++
+ #include <gdk/gdkgldrawable.h>
+ #include <gdk/gdkglwindow.h>
+ 
+-#include "windowext.h"
+-
+ namespace Gdk
+ {
+   namespace GL
+--- gtkglextmm-1.2.0/gdkglext/gdkmm/gl/font.cc.orig	2004-05-18 08:01:49.000000000 +0200
++++ gtkglextmm-1.2.0/gdkglext/gdkmm/gl/font.cc	2013-07-23 20:51:44.989677398 +0200
+@@ -17,10 +17,10 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA.
+  */
+ 
+-#include <gdk/gdkglfont.h>
+-
+ #include "font.h"
+ 
++#include <gdk/gdkglfont.h>
++
+ namespace Gdk
+ {
+   namespace GL
